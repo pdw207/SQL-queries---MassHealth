@@ -13,6 +13,7 @@ CSV.foreach(datafile, headers: true) do |row|
   end
 
   TownHealthRecord.find_or_create_by({town: row[0]}) do |hr|
+
     hr.town = row[0]
     hr.total_population_2005 =  row[1]
     hr.population_0_to_19_2005 =  row[2]
